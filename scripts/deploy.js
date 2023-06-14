@@ -10,11 +10,11 @@ async function main(){
   console.log(`Contract address:${VotingContract.target}`)
 
   //Interacting with the contract 
-  const currentCandidate = await VotingContract.Winner()
-  console.log(`The Candidate with the most vote are/is: ${currentCandidate}`)
+  const currentCandidate = await VotingContract.getResult()
+  console.log(`The Candidate with the most vote: ${currentCandidate}`)
  
   for(let i = 0; i< DefaultTest.length; i++){
-    var voteRespond = await VotingContract.getSpecficResult(DefaultTest[i])
+    var voteRespond = await VotingContract.getCandidate(DefaultTest[i])
     console.log(`${DefaultTest[i]}'s vote count is: ${voteRespond}`)
   }
 

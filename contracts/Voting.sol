@@ -48,7 +48,7 @@ contract Voting {
         for (uint256 i = 0; i < candidateStore.length; i++) {
             if (getCandidate(candidateStore[i]) > min) {
                 min = getCandidate(candidateStore[i]);
-                winner = new string[](candidateStore.length);
+                winner = new string[](candidateStore.length - 1);
                 counter = 0;
                 winner[counter] = candidateStore[i];
                 counter++;
