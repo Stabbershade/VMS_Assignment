@@ -58,7 +58,7 @@ yarn hardhat run .\scripts\interact.js --network sepolia
 ### Testing
 
 * Able to test `Voting.sol` with `test-deploy.js` using local hardhat
-```bash
+```
 yarn hardhat test
 ```
 
