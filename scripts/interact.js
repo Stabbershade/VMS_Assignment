@@ -4,10 +4,12 @@ const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
 
 const { ethers } = require("hardhat")
 
+//Initialising Provider, ABI and Signer
 const contractabi = require("../artifacts/contracts/Voting.sol/Voting.json")
 const Provider = new ethers.EtherscanProvider(network = "sepolia", ETHERSCAN_API_KEY)
 const Signer = new ethers.Wallet(PRIVATE_KEY, Provider)
 
+//Deployed contract is used
 const VotingContract = new ethers.Contract(CONTRACT_ADDRESS, contractabi.abi, Signer)
 
 //Interaction with Contract that was deployed
@@ -21,7 +23,7 @@ async function main() {
         console.log(`${currentCandidate[i]}'s vote count is: ${voteRespond}`)
     }
 
-    // Vote between John , Sam , Bob
+    // Vote between John , Sam , Bob , (default John)
     console.log("-----------Voting-------------")
     await VotingContract.Vote("John")
     const updatedResult = await VotingContract.getResult()

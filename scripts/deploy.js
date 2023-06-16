@@ -1,4 +1,6 @@
 const { ethers } = require("hardhat")
+
+//Default TestCase
 const DefaultTest = ["John", "Sam", "Bob"]
 
 async function main() {

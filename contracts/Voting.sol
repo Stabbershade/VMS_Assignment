@@ -6,6 +6,7 @@ pragma solidity ^0.8.18;
 
 contract Voting {
 
+    //Candidate to be voted
     struct Candidate {
         uint8 exist;
         string name;
@@ -31,20 +32,24 @@ contract Voting {
         }
     }
 
+    //Vote the candidates 
     function Vote(string memory candidateName) public VoteOnce nameExist(candidateName){
         candidates[candidateName].voteCount += 1;
         hasVoted[msg.sender] = true;
         emit VoteCasted(candidateName);
     }
 
+    /* returns total vote count of specified candidate*/
     function getCandidate(string memory candidateName) public view nameExist(candidateName) returns (uint256) {
         return candidates[candidateName].voteCount;
     }
 
+    /* returns all candidate*/
     function getRoster() public view returns (string[] memory){
         return candidateStore;
     }
 
+    /* returns an array of candidate/candidates that have the most votes */
     function getResult() public view returns (string[] memory) {
         uint256 min = 0;
         string[] memory winner = new string[](candidateStore.length);
@@ -63,16 +68,19 @@ contract Voting {
         return winner;
     }
 
+    //Only one Address can only vote once 
     modifier VoteOnce() {
         require(!hasVoted[msg.sender], "You have already voted.");
         _;
     }
 
+    //Candidate names that are not in the poll will be rejected
     modifier nameExist(string memory candidateName) {
         require(CandidateExists(candidateName) == true,"No such candidate exist");
         _;
     }
 
+    //For checking whether candidate name exist in the mapping
     function CandidateExists(string memory key) internal view returns (bool) {
         if (candidates[key].exist > 0) {
             return true;
