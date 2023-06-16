@@ -11,11 +11,16 @@ Your project should meet the following requirements:
 3. **Optional:** Compile and deploy your smart contract using Hardhat.
 4. Write a detailed README file that explains how to deploy and test your smart contract and includes a description of your project and any relevant information.
 
+
+
+
 ### Prerequisites
 
 * Sign up and get a free API Key from Alchemy for Sepolia or Goerli at [https://dashboard.alchemy.com/](https://dashboard.alchemy.com/)
 
 * Sign up and get a free API Key from Etherscan at [https://etherscan.io/apis](https://etherscan.io/apis)
+
+
 
 
 ## Installation
@@ -24,16 +29,27 @@ Your project should meet the following requirements:
 ```bash
 git clone https://github.com/Stabbershade/VMS_Assignment.git
 
+
+
 ```
 2. Go to downloaded directory and Use the package manager [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable) to download all dependencies.
 ```bash
 yarn
 ```
 
-3. Change the `.env.example` to `.env` and fill in respective environment variable. `CONTRACT_ADDRESS` can be left untouched.
+
+3. Change the `.env.example` to `.env`.
+
+
+
+4. Fill up respective environment variable. `CONTRACT_ADDRESS` can be left untouched.
    `API_KEY` is part of the RPC_URL. 
     * Example using Alchemy SEPLOIA_RPC_URL: `https://eth-sepolia.g.alchemy.com/v2/1234f13f13`
                             SEPLOIA_API_KEY: `1234f13f13`
+
+    `PRIVATE_KEY` will be the private key from your MetaMask. DO NOT SHARE IT WITH ANYONE!
+
+
 
 ### Executing program
 
@@ -55,12 +71,18 @@ CONTRACT_ADDRESS= <Contract Address>
 yarn hardhat run .\scripts\interact.js --network sepolia
 ```
 
+
+
+
 ### Testing
 
 * Able to test `Voting.sol` with `test-deploy.js` using local hardhat
 ```
 yarn hardhat test
 ```
+
+
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
