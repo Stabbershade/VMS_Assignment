@@ -15,7 +15,7 @@ contract Voting {
     address public immutable owner;
     mapping(address => bool) public hasVoted;
     mapping(string => Candidate) private candidates;
-    string[] private candidateStore;
+    string[] public candidateStore;
 
     event VoteCasted(string indexed candidate);
 
@@ -39,6 +39,10 @@ contract Voting {
 
     function getCandidate(string memory candidateName) public view nameExist(candidateName) returns (uint256) {
         return candidates[candidateName].voteCount;
+    }
+
+    function getRoster() public view returns (string[] memory){
+        return candidateStore;
     }
 
     function getResult() public view returns (string[] memory) {
