@@ -32,8 +32,8 @@ yarn
 
 3. Change the `.env.example` to `.env` and fill in respective environment variable. `CONTRACT_ADDRESS` can be left untouched.
    `API_KEY` is part of the RPC_URL. 
-   Example using Alchemy SEPLOIA_RPC_URL: https://eth-sepolia.g.alchemy.com/v2/1234f13f13 
-                         SEPLOIA_API_KEY: 1234f13f13
+    * Example using Alchemy SEPLOIA_RPC_URL: `https://eth-sepolia.g.alchemy.com/v2/1234f13f13`
+                            SEPLOIA_API_KEY: `1234f13f13`
 
 ### Executing program
 
