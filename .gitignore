@@ -1,0 +1,32 @@
+#Hardhat Files
+hardhat/node_modules
+hardhat/.env
+
+hardhat/cache
+hardhat/artifacts
+
+#Nextjs Files
+my-app/node_modules
+my-app/.pnp
+my-app/.pnp.js
+
+my-app/coverage
+
+my-app/.next/
+my-app/out/
+
+my-app/build
+
+my-app/.DS_Store
+my-app/*.pem
+
+my-app/npm-debug.log*
+my-app/yarn-debug.log*
+my-app/yarn-error.log*
+
+my-app/.env*.local
+
+my-app/.vercel
+
+my-app/*.tsbuildinfo
+my-app/next-env.d.ts
