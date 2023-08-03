@@ -1,4 +1,6 @@
-const Voting = ({input,setInput,voting}) => {
+import CandidateCard from "./candidiateCard"
+
+const Voting = ({candidiate,input,setInput,voting}) => {
     return(
         <div>
             <h2 className='text-4xl bolder text-[#1d4ed8] pb-8'>
@@ -19,6 +21,16 @@ const Voting = ({input,setInput,voting}) => {
                         Vote 
                     </button>
                 </form>
+                <h2 className="text-blue mt-1">Available Candidate to vote:</h2>
+                <ul>
+                    {candidiate.map(item => (
+                        <CandidateCard
+                        key = {item}
+                        name = {item}
+                        />
+                    ))
+                    }
+                </ul>
         </div>
     )
 }

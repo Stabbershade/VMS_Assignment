@@ -1,2 +1,2 @@
-//Contract Address that was created
-export const VotingContractAddress = '0x75df35Fad6132BABe7A5718e65D9Ccc98d611eF0'
+//Contract Address that was created from hardhat
+export const VotingContractAddress = '0x06e1aDbF7F1149d1d589fd4D2BBFF96b734ED260'

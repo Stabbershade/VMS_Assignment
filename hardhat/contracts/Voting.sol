@@ -9,12 +9,14 @@ contract Voting {
     //Candidate to be voted
     struct Candidate {
         uint8 exist;
+        uint256 id;
         string name;
         uint256 voteCount;
     }
 
     address public immutable owner;
     mapping(address => bool) public hasVoted;
+    mapping(address => string) public votedFor;
     mapping(string => Candidate) private candidates;
     string[] public candidateStore;
 
@@ -25,6 +27,7 @@ contract Voting {
         for (uint256 i = 0; i < _candidiate.length; i++) {
             candidates[_candidiate[i]] = Candidate({
                 exist: 1,
+                id: i ,
                 name: _candidiate[i],
                 voteCount: 0
             });
@@ -36,6 +39,7 @@ contract Voting {
     function Vote(string memory candidateName) public VoteOnce nameExist(candidateName){
         candidates[candidateName].voteCount += 1;
         hasVoted[msg.sender] = true;
+        votedFor[msg.sender] = candidateName;
         emit VoteCasted(candidateName);
     }
 
