@@ -8,11 +8,14 @@ Your project should meet the following requirements:
 
 1. Use Solidity to create a smart contract that demonstrates the use of variables, functions, and events.
 2. Use Remix to compile and deploy your smart contract to a test network such as Goerli or Sepolia.
-3. **Optional:** Compile and deploy your smart contract using Hardhat.
+3. Compile and deploy your smart contract using Hardhat.
 4. Write a detailed README file that explains how to deploy and test your smart contract and includes a description of your project and any relevant information.
-
-
-
+5. Develop a DApp that solves a real-world problem or provides a useful service to users.
+6. The DApp should have a user-friendly interface built with React and Next.js
+7. The back-end should be implemented using Node.js
+8. The DApp should use Ethereum as the underlying blockchain technology
+9. Implement smart contracts that handle the core functionality of the DApp
+10. Ensure the security and reliability of the DApp by thoroughly testing it using Hardhat 
 
 ### Prerequisites
 
